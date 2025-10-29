@@ -24,7 +24,7 @@ const CartPage: React.FC = () => {
     <div className="min-h-screen bg-white py-6 sm:py-8 md:py-10 px-3 sm:px-4 md:px-6 lg:px-8 pt-20 md:pt-14 w-full">
       <div className="max-w-6xl mx-auto w-full">
         <CustomButton icon={<FaArrowLeft />} text="Back" clickHandle={() => navigate("/")} />
-        {/* Header */}
+        {/*  cart page Header */}
         <div className="mb-6 sm:mb-8 md:mb-10">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-blue-900 mb-2">
             Shopping Cart
