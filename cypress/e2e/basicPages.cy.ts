@@ -1,18 +1,22 @@
-describe('Basic Component Page Tests', () => {
+describe(' Basic Component Page Tests', () => {
+  const baseUrl = 'http://localhost:5173'
 
-    it('should load Home Page', () => {
-      cy.visit('http://localhost:5173/')
-      cy.contains('Product').should('exist') 
-    })
-  
-    it('should load Product Detail Page', () => {
-      cy.visit('http://localhost:5173/product/2')
-      cy.contains('Add to Cart').should('exist') 
-    })
-  
-    it('should load Cart Page', () => {
-      cy.visit('http://localhost:5173/cart')
-      cy.contains('Cart').should('exist') 
-    })
+  it('should load Home Page', () => {
+    cy.visit(`${baseUrl}/`)
+    cy.contains('Product').should('exist')
+    cy.url().should('include', '/')
+  })
+
+  it('should load Product Detail Page', () => {
+    cy.visit(`${baseUrl}/product/2`)
+    cy.contains('Add to Cart').should('exist')
+    cy.url().should('include', '/product/2')
+  })
+
+  it('should load Cart Page', () => {
+    cy.visit(`${baseUrl}/cart`)
+    cy.contains('Cart').should('exist')
+    cy.url().should('include', '/cart')
   })
   
+})

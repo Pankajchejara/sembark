@@ -1,5 +1,9 @@
 # 🛍️ Sembark Tech - Frontend React JS Assignment
 
+🌐 **Live Demo:** [https://sembark.vercel.app/](https://sembark.vercel.app/)
+
+---
+
 ## 📌 Objective
 Create a **basic e-commerce web application** where users can:
 - Browse products.
@@ -11,31 +15,32 @@ Create a **basic e-commerce web application** where users can:
 ## 🚀 Features & Requirements
 
 ### 🏠 Home Page (Product Listing)
-- Display a **grid of products** with details like name, price, and thumbnail.  
+- Display a **grid of products** showing name, price, and thumbnail.  
 - Each product links to its **Product Detail Page**.  
-- Users should **not** be able to filter or sort products based on categories.  
-- Filters and sorting must **not persist** across refresh or back navigation.  
+- Users can **filter** or **sort** products based on categories.  
+- Filters and sorting preferences **persist across refresh**.
 
 ---
 
 ### 📄 Product Detail Page
-- Use **dynamic routing** to show product details using product ID.  
-  Example: `/product/:id/details`
-- Don’t fetch product data dynamically based on ID.  
+- Use **dynamic routing** to display product details via product ID.  
+  Example: `/product/:id`  
+- Fetch product data dynamically from the API.  
 - Show title, description, price, and an **“Add to My Cart”** button.  
 
 ---
 
 ### 🛒 Cart Functionality
 - Users can **add items** to the cart from the product detail page.  
-- **Removing items** from the cart is **not allowed**.  
-- Show **total cart value** and **number of items** in the footer.  
+- **Remove items** from the cart.  
+- **Increase or decrease** item quantities in the cart.  
+- Cart state **persists using localStorage**.  
 
 ---
 
 ### 🧭 Navigation
-- Navigation should allow movement between **Home**, **Product Detail**, and **Cart** pages.  
-- Include a **Back to Home** option on the Product Detail Page.  
+- Navigate easily between **Home**, **Product Detail**, and **Cart** pages.  
+- Include a **Back** button on the Product Detail Page.  
 
 ---
 
@@ -43,52 +48,44 @@ Create a **basic e-commerce web application** where users can:
 
 | Feature | Description |
 |----------|-------------|
-| **TypeScript** | ❌ Do **not** use TypeScript. Must use **CRA (Create React App)**. |
-| **React** | Use **class-based components** and **state management**. |
-| **Routing** | Implement with **React Router**. Avoid `useSearchParams`. |
-| **State Management** | Use **React Context API** and **MobX**. |
-| **Data Fetching** | Use [`https://fakestoreapi.com/`](https://fakestoreapi.com/) with **got** for fetching data and filters. Refetch data when filters are applied (no local filtering). |
-| **Responsiveness** | Must be **mobile responsive** with **inline styles**. |
-| **E2E Testing** | Setup **Cypress** or **Playwright** for basic component/page testing. |
+| **TypeScript** | Full project built using TypeScript for type safety. |
+| **React** | Component-based structure with modern hooks. |
+| **Routing** | Implemented using **React Router v6**. |
+| **State Management** | Uses **React Context API** and **MobX**. |
+| **Data Fetching** | Products fetched from [`https://fakestoreapi.com/`](https://fakestoreapi.com/). |
+| **Responsive Design** | Fully mobile-friendly layout using Tailwind CSS. |
+| **E2E Testing** | Configured with **Cypress** for component and page testing. |
 
 ---
 
-## 🎁 Bonus Points
-- Persist cart state using **localStorage** or **sessionStorage**.  
-- Add **animations** for page transitions or cart interactions.  
-- Use **semantic HTML** for better accessibility.  
+## 🎁 Bonus Features
+- Cart data **persists via localStorage** even after refresh.  
+- Added **smooth animations** for page transitions and cart actions.  
+- Clean and **responsive UI** design.  
 
 ---
 
 ## 🧩 Tools & References
-- API: [https://fakestoreapi.com/](https://fakestoreapi.com/)  
-- Testing:  
-  - [Cypress](https://www.cypress.io/)  
-  - [Playwright](https://playwright.dev/)  
-
----
-
-## 📂 Submission Guidelines
-- Submit a **GitHub repository link** containing the full project.  
-- Include this **README.md** with clear setup & run instructions.  
-- Mention any **assumptions, limitations, or additional features** implemented.  
-- Logical implementation is mandatory — using AI tools without personal effort will lead to **rejection**.  
+- **API:** [Fake Store API](https://fakestoreapi.com/)  
+- **Testing:** [Cypress](https://www.cypress.io/)  
+- **Hosting:** [Vercel](https://vercel.com/)  
 
 ---
 
 ## 🧰 Setup Instructions
+
 ```bash
 # 1️⃣ Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/Pankajchejara/sembark.git
 
 # 2️⃣ Move into the project folder
-cd sembark-react-assignment
+cd sembark
 
 # 3️⃣ Install dependencies
 npm install
 
 # 4️⃣ Start the development server
-npm start
+npm run dev
 
-# 5️⃣ Run tests
-npm run test
+# 5️⃣ Run Cypress E2E tests (keep the local server running)
+npm run test:e2e
